@@ -1,0 +1,41 @@
+* {
+	font-family: arial, sans-serif;
+}
+
+h1 {
+	text-align: center;
+	margin-top: 6%;
+	color: rgb(39, 4, 240);
+}
+
+p, form {
+	text-align: center;
+}
+
+
+#flash-message-container {
+    text-align: center;
+    margin-top: 2rem;  /* 2cm de marge en haut */
+}
+
+
+.flash-message {
+    color: red;
+    font-weight: bold;
+}
+
+.logo-container {
+	text-align: center;
+	margin-top: 20px; /* Ajustez cette valeur selon vos besoins */
+}
+  
+.site-logo {
+	max-width: 100px;  /* Ajustez cette valeur selon vos besoins */
+	height: auto;
+}
+
+.company-name {
+	color: red;
+	font-weight: bold;
+	margin-top: 10px; /* ajustez l'espacement au besoin */
+}
