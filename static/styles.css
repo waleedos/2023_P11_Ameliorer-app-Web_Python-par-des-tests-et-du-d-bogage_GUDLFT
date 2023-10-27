@@ -2,14 +2,16 @@
 
 h1 {
     text-align: center;
-    margin-top: 6%;
+    margin-top: 3%;
     color: blue;
 }
 
 h2 {
     color: red;
-    padding-top: 50px;
+    padding-top: 20px;
     text-decoration: underline;
+    text-align: center;
+    margin-top: 3%;
 }
 
 table {
@@ -47,4 +49,34 @@ th, td {
 	color: red;
 	font-weight: bold;
 	margin-top: 10px; /* ajustez l'espacement au besoin */
+}
+
+/* Pour manipuler "Places available: 25" */
+#places-available {
+    margin-top: 20px;
+    color: blue;
+    font-weight: bold;
+}
+
+/* Pour manipuler le formulaire */
+#booking-form {
+    margin-top: 40px;  /* Ajoutez le margin-top que vous souhaitez */
+}
+
+.flash-message{
+    color: red;
+    padding-top: 20px;
+    text-align: center;
+}
+
+li {
+    color: chocolate; 
+    font-weight: 400;
+    font-size: 18px;
+}
+
+.center-text p {
+    color: chocolate;
+    font-weight: 600;
+    font-size: 20px;
 }

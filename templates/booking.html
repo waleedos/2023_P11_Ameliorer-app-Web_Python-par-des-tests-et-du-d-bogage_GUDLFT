@@ -3,58 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Summary | GUDLFT Registration</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <title>Booking for {{competition['name']}} || GUDLFT</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">    
 </head>
 <body>
     <div class="logo-container">
         <img src="/static/logo.png" alt="Logo du site" class="site-logo">
         <p class="company-name">GÜDLFT</p>
-    </div>
-    <h1 class="center-text">Welcome, {{ club['email'] }}</h1>
-    <div class="center-text">
-        <a href="{{ url_for('logout') }}">Logout</a>
-    </div>
-
-    <div class="center-text">
-        <p>Points available: {{ club['points'] }}</p>
+    </div>    
+    <h2>{{competition['name']}}</h2>
+    <!-- Ligne pour "Places available: 25" -->
+    <div class="center-text" id="places-available">
+        Places available: {{competition['numberOfPlaces']}}
     </div>
 
-    <h2 class="center-text">Competitions:</h2>
+    <!-- Ligne pour le formulaire -->
+    <div class="center-text" id="booking-form">
+        <form action="/purchasePlaces" method="post">
+            <input type="hidden" name="club" value="{{club['name']}}">
+            <input type="hidden" name="competition" value="{{competition['name']}}">
+            <label for="places">How many places?</label>
+            <input type="number" name="places" id=""/>
+            <button type="submit">Book</button>
+        </form>
+    </div>
 
-    {% with messages = get_flashed_messages() %}
-    {% if messages %}
-    <ul class="center-text">
-        {% for message in messages %}
-        <li>{{ message }}</li>
-        {% endfor %}
-    </ul>
-    {% endif %}
-    {% endwith %}
-
-    <table class="center-block">
-        <thead>
-            <tr>
-                <th>Competition Name</th>
-                <th>Date</th>
-                <th>Number of Places</th>
-                <th>Action</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for comp in competitions %}
-            <tr>
-                <td>{{ comp['name'] }}</td>
-                <td>{{ comp['date'] }}</td>
-                <td>{{ comp['numberOfPlaces'] }}</td>
-                <td>
-                    {% if comp['numberOfPlaces']|int > 0 %}
-                    <a href="{{ url_for('book', competition=comp['name'], club=club['name']) }}">Book Places</a>
-                    {% endif %}
-                </td>
-            </tr>
-            {% endfor %}
-        </tbody>
-    </table>
+    <!-- Section pour les messages flash -->
+    <div id="flash-message-container">
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                {% for message in messages %}
+                    <div class="flash-message">{{ message }}</div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+    </div>
 </body>
 </html>
