@@ -75,14 +75,24 @@ def show_summary():
         return render_template('welcome.html', club=club, competitions=competitions)
 
 
-@app.route('/book/<competition>/<club>')
+# Route modifiée pour la réservation
+@app.route("/book/<competition>/<club>")
 def book(competition, club):
-    ok_flag, found_club, found_competition = get_club_and_competition(club, competition)
-    if ok_flag:
-        return render_template('booking.html', club=found_club, competition=found_competition)
+    foundClub = [c for c in clubs if c["name"] == club][0]
+    foundCompetition = [c for c in competitions if c["name"] == competition][0]
+    if foundClub and foundCompetition:
+        max_places = min(
+            12, int(foundClub["points"]), int(foundCompetition["numberOfPlaces"])
+        )
+        return render_template(
+            "booking.html",
+            club=foundClub,
+            competition=foundCompetition,
+            max_places=max_places,
+        )
     else:
         flash("Something went wrong-please try again")
-        return render_template('welcome.html', club=club, competitions=competitions)
+        return render_template("welcome.html", club=club, competitions=competitions)
 
 
 @app.route('/purchasePlaces', methods=['POST'])
