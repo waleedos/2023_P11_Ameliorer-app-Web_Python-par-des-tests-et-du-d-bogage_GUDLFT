@@ -64,7 +64,7 @@ th, td {
 }
 
 .flash-message{
-    color: red;
+    color: darkred;
     padding-top: 20px;
     text-align: center;
 }
@@ -76,7 +76,14 @@ li {
 }
 
 .center-text p {
-    color: chocolate;
+    color: forestgreen;
     font-weight: 600;
     font-size: 20px;
+}
+
+.flash-messages {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    text-align: center;
 }

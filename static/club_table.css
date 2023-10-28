@@ -1,0 +1,27 @@
+/* Centrer le tableau */
+.center-table {
+    margin-left: auto;
+    margin-right: auto;
+    border-collapse: collapse;
+    width: 35%;  /* Élargir le tableau */
+}
+
+/* Ajouter des bordures aux cellules du tableau */
+.center-table th, .center-table td {
+    border: 1px solid black;
+    padding: 10px;  /* Ajouter de l'espacement autour du texte */
+    text-align: center;  /* Centrer le texte */
+}
+
+/* Centrer le texte dans les en-têtes */
+.center-table th {
+    background-color: #f2f2f2;
+}
+
+/* Style pour le titre du tableau */
+.center-table caption {
+    font-size: 1.5em;  /* Réduire la taille de la police */
+    color: #009021;  /* Changer la couleur en orange */
+    padding-bottom: 20px;  /* Ajouter un padding-bottom de 20px */
+    padding-top: 20px;
+}

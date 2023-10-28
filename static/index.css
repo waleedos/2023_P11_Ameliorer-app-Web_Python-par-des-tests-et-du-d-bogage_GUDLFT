@@ -39,3 +39,12 @@ p, form {
 	font-weight: bold;
 	margin-top: 10px; /* ajustez l'espacement au besoin */
 }
+
+.club_table {
+    text-align: center;
+	font-size: 20px;
+    margin-top: 3%;
+    color: rgb(184, 70, 4) !important;
+	font-weight: 900;	
+	text-shadow: 0cap;
+}

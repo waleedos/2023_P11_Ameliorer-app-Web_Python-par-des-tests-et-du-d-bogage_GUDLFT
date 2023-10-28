@@ -22,16 +22,15 @@
 
     {% with messages = get_flashed_messages() %}
     {% if messages %}
-    <ul class="center-text">
+    <ul class="flash-messages center-text">
         {% for message in messages %}
         <li>{{ message }}</li>
         {% endfor %}
     </ul>
-        
-    <h2 class="center-text">Competitions:</h2>
-
     {% endif %}
     {% endwith %}
+
+    <h2 class="center-text">Competitions:</h2>
 
     <table class="center-block">
         <thead>

@@ -122,6 +122,11 @@ def purchase_places():
     return render_template('welcome.html', club=club, competitions=competitions)
 
 
+@app.route('/printClubs')
+def print_clubs():
+    return render_template('club_table.html', clubs=clubs)
+
+
 @app.route('/logout')
 def logout():
     return redirect(url_for('index'))
