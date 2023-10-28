@@ -6,14 +6,29 @@
             "numberOfPlaces": "25"
         },
         {
-            "name": "Bridgestone lift",
-            "date": "2023-12-27 15:30:00",
-            "numberOfPlaces": "8"
-        },      
-        {
             "name": "Fall Classic",
-            "date": "2020-10-22 13:30:00",
+            "date": "2021-10-22 13:30:00",
             "numberOfPlaces": "13"
-        }
+        },
+        {
+            "name": "Europe Class",
+            "date": "2022-12-14 10:00:00",
+            "numberOfPlaces": "19"
+        },
+        {
+            "name": "Aust Lifting",
+            "date": "2023-11-14 17:00:00",
+            "numberOfPlaces": "19"
+        },
+        {
+            "name": "LA Strong Man",
+            "date": "2023-12-23 11:00:00",
+            "numberOfPlaces": "35"
+        },   
+        {
+            "name": "Texas She Lifts",
+            "date": "2024-03-02 13:30:00",
+            "numberOfPlaces": "35"
+        }                
     ]
 }

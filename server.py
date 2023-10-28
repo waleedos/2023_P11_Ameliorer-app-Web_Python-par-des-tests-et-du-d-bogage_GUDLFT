@@ -1,6 +1,7 @@
 # Importations de modules
 import json
 from flask import Flask, render_template, request, redirect, flash, url_for
+from datetime import datetime  # Ajouté pour la gestion du temps
 
 
 # Fonctions pour charger les données
@@ -16,7 +17,15 @@ def load_competitions():
         return list_of_competitions
 
 
-# Fonctions supplémentaires (provenant de la version de maintenant)
+# Fonction pour vérifier la validité de la date
+def check_date_validity(competition: dict) -> bool:
+    current_time = datetime.now()
+    competition_time_str = competition["date"]
+    competition_time = datetime.strptime(competition_time_str, "%Y-%m-%d %H:%M:%S")
+    return current_time < competition_time
+
+
+# Fonctions supplémentaires
 def get_club_and_competition(club: str, competition: str) -> (bool, dict, dict):
     competition = [c for c in competitions if c['name'] == competition]
     club = [c for c in clubs if c['name'] == club]
@@ -48,7 +57,7 @@ competitions = load_competitions()
 clubs = load_clubs()
 
 
-# Vérification de l'email (provenant de la dernière version)
+# Vérification de l'email
 def check_email(email: str) -> dict:
     clubs_found = []
     for club in clubs:
@@ -60,7 +69,7 @@ def check_email(email: str) -> dict:
         return clubs_found[0]
 
 
-# Routes (fusionnées)
+# Routes
 @app.route('/')
 def index():
     return render_template('index.html')
@@ -75,11 +84,16 @@ def show_summary():
         return render_template('welcome.html', club=club, competitions=competitions)
 
 
-# Route modifiée pour la réservation
 @app.route("/book/<competition>/<club>")
 def book(competition, club):
     foundClub = [c for c in clubs if c["name"] == club][0]
     foundCompetition = [c for c in competitions if c["name"] == competition][0]
+
+    # Assurez-vous que la compétition n'appartient pas au passé...
+    if not check_date_validity(foundCompetition):
+        flash("Selected competition is over")
+        return render_template("welcome.html", club=foundClub, competitions=competitions)
+
     if foundClub and foundCompetition:
         max_places = min(
             12, int(foundClub["points"]), int(foundCompetition["numberOfPlaces"])
