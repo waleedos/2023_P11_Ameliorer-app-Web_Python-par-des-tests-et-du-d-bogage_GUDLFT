@@ -9,6 +9,21 @@
         "email": "admin@irontemple.com",
         "points":"4"
     },
+    {
+        "name":"Bodylift France",
+        "email":"marina@bodylift.fr",
+        "points":"16"
+    },
+    {
+        "name":"Belge Lifts",
+        "email": "sec@belge-lift.be",
+        "points":"13"
+    },
+    {
+        "name":"Aust Build",
+        "email": "dany@austbuild.com",
+        "points":"5"
+    },
     {   "name":"She Lifts",
         "email": "kate@shelifts.co.uk",
         "points":"12"
