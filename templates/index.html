@@ -14,10 +14,19 @@
     </div>
     <h1>Welcome to the GUDLFT Registration Portal!</h1>
     <p>Please enter your secretary email to continue:</p>
+
+    <!-- Ajout du message d'erreur pour l'email -->
+    {% if email_error %}
+        <p>Sorry, that email wasn't found.</p></br></br>
+    {% endif %}
+
     <form action="showSummary" method="post">
         <label for="email">Email:</label>
         <input type="email" name="email" id=""/>
         <button type="submit">Enter</button>
     </form>
+    <div class="club_table">
+    <a href="/printClubs">See club list and points</a>
+    </div>
 </body>
 </html>
