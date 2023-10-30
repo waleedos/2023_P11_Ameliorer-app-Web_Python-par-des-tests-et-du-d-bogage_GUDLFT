@@ -122,8 +122,8 @@ def purchase_places():
     return render_template('welcome.html', club=club, competitions=competitions)
 
 
-@app.route('/printClubs')
-def print_clubs():
+@app.route('/club_table.html')
+def club_table():
     return render_template('club_table.html', clubs=clubs)
 
 
