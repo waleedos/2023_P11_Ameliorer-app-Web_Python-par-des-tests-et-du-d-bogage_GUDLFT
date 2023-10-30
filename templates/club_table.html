@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">  
-    <link rel="stylesheet" href="{{ url_for('static', filename='club_table.css') }}">  <!-- Lien vers le nouveau fichier CSS -->
-    <title>Available points for all clubs</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='club_table.css') }}">  
+    <title>Points disponibles pour tous les clubs</title>
     <link rel="icon" href="/static/favicon.ico" type="image/x-icon">  
 </head>
 <body>
@@ -14,23 +14,21 @@
         <p class="company-name">GÜDLFT</p>
     </div>
     <table class="center-table">
-        <caption><b><font size="5">List of all clubs with their available points</font></b></caption>
+        <caption><b><font size="5">Liste de tous les clubs avec leurs points disponibles</font></b></caption>
         <tr>
             <th>Club name</th>
-            <th>Secretary email</th>
             <th>Points count</th>
         </tr>
         {% for club in clubs %}
             <tr>
-                <th>{{ club['name'] }}</th>
-                <td>{{ club['email'] }}</td>
+                <td>{{ club['name'] }}</td>
                 <td>{{ club['points'] }}</td>
             </tr>
         {% endfor %}
     </table>
     <br>
     <div style="text-align: center;">
-        <a href="/">Go back to login page</a>
+        <a href="/">Retourner à la page de connexion</a>
     </div>
 </body>
 </html>

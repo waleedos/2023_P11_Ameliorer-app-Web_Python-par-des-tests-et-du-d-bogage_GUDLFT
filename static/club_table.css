@@ -3,7 +3,7 @@
     margin-left: auto;
     margin-right: auto;
     border-collapse: collapse;
-    width: 35%;  /* Élargir le tableau */
+    width: 25%;  /* Élargir le tableau */
 }
 
 /* Ajouter des bordures aux cellules du tableau */
@@ -24,4 +24,6 @@
     color: #009021;  /* Changer la couleur en orange */
     padding-bottom: 20px;  /* Ajouter un padding-bottom de 20px */
     padding-top: 20px;
+    width: 35%; /* Définir la largeur du titre à 35% */
+    text-align: center; /* Centrer le texte du titre */
 }
