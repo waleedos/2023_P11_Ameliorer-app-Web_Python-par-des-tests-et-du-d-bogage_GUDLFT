@@ -29,6 +29,12 @@
             "name": "Texas She Lifts",
             "date": "2024-03-02 13:30:00",
             "numberOfPlaces": "35"
-        }                
+        },
+        {
+            "name": "Fully Booked Competition",
+            "date": "2024-03-02 13:30:00",
+            "numberOfPlaces": "0"
+        }        
+       
     ]
 }
