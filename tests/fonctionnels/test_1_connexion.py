@@ -77,3 +77,18 @@ def test_update_points_and_places(client):
     club = {'points': '15'}
     places_required = 5
     assert update_places(competition, places_required, club)
+
+
+# ******************** Test de la limite de points du club ********************#
+
+def test_club_point_limit(client):
+    # Étape 1 : Connexion avec un email valide existant dans le fichier clubs.json
+    client.post('/showSummary', data={'email': 'john@simplylift.co'})
+
+    # Étape 2 : Tenter de réserver plus de places que les points disponibles pour le club
+    response = client.post('/purchasePlaces', data={
+        'club': 'Simply Lift',
+        'competition': 'Spring Festival',
+        'places': '20'  # Supposons que le club ait moins de 20 points
+    })
+    assert b'You tried to book an invalid number of places, sorry' in response.data
