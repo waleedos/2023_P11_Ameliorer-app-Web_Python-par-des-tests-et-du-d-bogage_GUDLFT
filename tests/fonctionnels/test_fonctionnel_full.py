@@ -53,8 +53,8 @@ def test_booking(client):
     assert b'Great-booking complete!' in response.data
 
 
-
 # ************** TEST DE VÉRIFICATION DE L'EMAIL **************#
+
 
 def test_invalid_email(client):
     response = client.post('/showSummary', data={'email': 'invalid@simplylift.co'})
@@ -66,13 +66,11 @@ def test_valid_email(client):
     assert b'Welcome, john@simplylift.co' in response.data
 
 
-
 # ******** TEST DE VALIDITÉ DE LA DATE DE LA COMPÉTITION ********#
 
 def test_invalid_competition_date(client):
     competition = {'date': '2020-01-01 10:00:00'}  # Une date passée
     assert not check_date_validity(competition)
-
 
 
 # ********* TEST DE MISE À JOUR DES POINTS ET DES PLACES *********#
@@ -82,7 +80,6 @@ def test_update_points_and_places(client):
     club = {'points': '15'}
     places_required = 5
     assert update_places(competition, places_required, club)
-
 
 
 # ******************** Test de la limite de points du club ********************#
@@ -98,7 +95,6 @@ def test_club_point_limit(client):
         'places': '20'  # Supposons que le club ait moins de 20 points
     })
     assert b'You tried to book an invalid number of places, sorry' in response.data
-
 
 
 # ******** Test de la disponibilité des places dans une compétition ********#
@@ -119,7 +115,6 @@ def test_competition_availability(client):
     assert b'You tried to book an invalid number of places, sorry' in response.data
 
 
-
 # ******** Test de la navigation sans connexion ********#
 
 
@@ -135,7 +130,6 @@ def test_access_without_login(client):
     # Test access to booking.html without login
     response = client.get('/book/Spring Festival/Simply Lift')
     assert response.status_code == 200  # Should return HTTP 200 OK, as per your current application behavior
-
 
 
 # ******** Tests des messages flash ********#

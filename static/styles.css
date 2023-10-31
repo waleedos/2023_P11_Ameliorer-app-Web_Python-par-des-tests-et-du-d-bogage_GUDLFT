@@ -2,16 +2,16 @@
 
 h1 {
     text-align: center;
-    margin-top: 3%;
+    margin-top: 2%;
     color: blue;
 }
 
 h2 {
     color: red;
-    padding-top: 20px;
+    padding-top: 10px;
     text-decoration: underline;
     text-align: center;
-    margin-top: 3%;
+    margin-top: 1%;
 }
 
 table {
