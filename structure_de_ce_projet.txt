@@ -18,15 +18,13 @@
 │   ├── index.html
 │   └── welcome.html
 └── tests
-    ├── fonctionnels
-    │   ├── test_2_navigation.py
-    │   ├── test_3_reservation.py
-    │   └── test_fonctionnel_full.py
+    ├── functional
     ├── integrity
+    ├── performance
     ├── test_max_12_and_points_update.py
     ├── test_mis-a-jour-total-points.py
     ├── test_valid_and_invalid_email.py
     ├── test_valid_invalid_past_competitions.py
     └── unit
 
-6 directories, 23 files
+7 directories, 20 files

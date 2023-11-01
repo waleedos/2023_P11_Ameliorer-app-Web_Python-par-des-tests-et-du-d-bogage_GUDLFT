@@ -14,8 +14,8 @@ def test_client():
 @pytest.fixture
 def database_fixture():
     data = {
-        "competition_1": load_competitions()[0],
-        "competition_2": load_competitions()[1],
+        "competition_1": load_competitions()[5],  # Assurez-vous que c'est une compétition future
+        "competition_2": load_competitions()[1],  # Assurez-vous que c'est une compétition passée
         "club_1": load_clubs()[0],
         "club_2": load_clubs()[1]
     }
@@ -23,6 +23,9 @@ def database_fixture():
 
 
 def test_booking_for_past_competition(test_client, database_fixture):
-    competition = database_fixture['competition_2']  # Assuming this is the past competition
-    response = test_client.get('/book/' + competition['name'] + '/Simply Lift')
+    competition = database_fixture['competition_2']  # Assumons que c'est la compétition passée
+    club = database_fixture['club_1']['name']  # Utilisez le nom du club ici
+    response = test_client.post(f'/book/{competition["name"]}/{club}')
+
+    # Utilisation de la variable 'response' pour une assertion
     assert b"Selected competition is over" in response.data
