@@ -1,6 +1,9 @@
 .
+├── clubs_backup.json
 ├── clubs.json
+├── competitions_backup.json
 ├── competitions.json
+├── docs
 ├── README.md
 ├── requirements.txt
 ├── server.py
@@ -17,14 +20,37 @@
 │   ├── club_table.html
 │   ├── index.html
 │   └── welcome.html
-└── tests
-    ├── functional
-    ├── integrity
-    ├── performance
-    ├── test_max_12_and_points_update.py
-    ├── test_mis-a-jour-total-points.py
-    ├── test_valid_and_invalid_email.py
-    ├── test_valid_invalid_past_competitions.py
-    └── unit
+├── tests
+│   ├── fonctionnels
+│   │   └── test_fonctionnel_full.py
+│   ├── integrity
+│   │   ├── test_all_invalid_reservations.py
+│   │   ├── test_flash_message.py
+│   │   ├── test_flux_reservation.py
+│   │   ├── test_general_navigation.py
+│   │   ├── test_logout_and_session.py
+│   │   ├── test_past_competition.py
+│   │   ├── test_place_update.py
+│   │   ├── test_point_deductions.py
+│   │   └── test_user_authentication.py
+│   ├── performance
+│   │   └── locustfile.py
+│   └── unit
+│       ├── test_booking_for_past_competition.py
+│       ├── test_date_validity_in_json.py
+│       ├── test_get_club_and_competition_inexistante.py
+│       ├── test_home_page_load.py
+│       ├── test_if_change_variables_in_templates.py
+│       ├── test_json_files.py
+│       ├── test_load_data_with_empty_json.py
+│       ├── test_max_12_and_points_update.py
+│       ├── test_mis-a-jour-total-points.py
+│       ├── test_nbr_place_dispo_competitions.py
+│       ├── test_rout_send_to_right_template.py
+│       ├── test_templates_good_loads.py
+│       ├── test_valid_and_invalid_club_login.py
+│       ├── test_valid_and_invalid_email.py
+│       └── test_valid_invalid_past_competitions.py
+└── wsgi.py
 
-7 directories, 20 files
+8 directories, 45 files
