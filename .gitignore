@@ -4,4 +4,9 @@ lib
 .Python
 .envrc
 __pycache__
+__pycache__/
 venv
+.idea
+.idea/
+.pytest_cache
+.pytest_cache/
