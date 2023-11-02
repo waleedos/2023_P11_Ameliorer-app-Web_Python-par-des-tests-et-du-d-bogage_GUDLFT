@@ -1,7 +1,7 @@
 <h1 align="center">OpenClassrooms Project N°11</h1>
 <h2 align="center">P11_Améliorez une application Web Python par des tests et du débogage</h1>
 
-![Logo LITReview](https://github.com/waleedos/2023_P11_Ameliorer-app-Web_Python-par-des-tests-et-du-d-bogage_GUDLFT/blob/QA/docs/logo-entete.png)
+![Logo LITReview](https://github.com/waleedos/2023_P11_Ameliorer-app-Web_Python-par-des-tests-et-du-d-bogage_GUDLFT/blob/QA/docs/Logos-Entete/logo-entete.png)
 
 
 ## Technologies
