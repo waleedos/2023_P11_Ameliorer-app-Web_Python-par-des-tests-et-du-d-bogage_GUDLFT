@@ -25,7 +25,7 @@ Logiciel gratuit.
 
 Güdlft a mis sur pied une équipe appelée Régional « Outreach » chargée de créer une version plus légère (et moins coûteuse) de leur plateforme actuelle pour les organisateurs régionaux; L'objectif de l'application est de rationaliser la gestion des compétitions entre les clubs (hébergement, inscriptions, frais et administration).
 
-L'équipe a dressé une liste de spécifications fonctionnelles pour un prototype, réparties en plusieurs phases et a mis déjà en œuvre la phase 1 du prototype.
+L'équipe a dressé une liste de [spécifications fonctionnelles ainsi que le guide de développement](https://github.com/waleedos/2023_P11_Ameliorer-app-Web_Python-par-des-tests-et-du-d-bogage_GUDLFT/blob/QA/docs/Mission/2-Sp%C3%A9cifications-fonctionnelles.pdf) pour un prototype, réparties en plusieurs phases et a mis déjà en œuvre la phase 1 du prototype.
 
 Le rapport de QA pour cette phase 1 du projet montre qu’Il y a plusieurs bogues, dont un qui fait planter l'application ! Malheureusement.
 
@@ -33,8 +33,7 @@ Afin de résoudre tous les bogues de cette phase 1 déjà établie, et terminer 
 
 Pour gagner du temps de configuration, nous utilisons Flask et JSON pour éviter d'utiliser une base de données. La plupart des outils dont vous aurez besoin se trouvent dans le fichier requirements.txt dans le repo, mais vous devrez installer Flask et notre framework de test préféré, pytest, ainsi que notre outil de test de performance, Locust.
 
-Vous devrez également préparer un rapport de test et un rapport de performances, conformément au
-guide de développement à la fin des spécifications fonctionnelles ci-jointes. 
+Vous devrez également préparer un rapport de test et un rapport de performances, conformément au [guide de développement à la fin des spécifications fonctionnelles ci-jointes](https://github.com/waleedos/2023_P11_Ameliorer-app-Web_Python-par-des-tests-et-du-d-bogage_GUDLFT/blob/QA/docs/Mission/2-Sp%C3%A9cifications-fonctionnelles.pdf). 
 
 Dans toute cette démarche, il est impératif de suivre toutes les directives, car le QA nous reproche de ne pas respecter les normes. Vous devez tester de manière approfondie les résultats requis pour toutes les fonctionnalités de l'application. Je vous encourage également à adopter une approche de TDD (Test Driven Development), car c’est le meilleur moyen pour rationaliser votre travail.
 
@@ -43,13 +42,13 @@ Une fois que vous aurez terminé, nous ferons un examen de ce que vous avez dans
 
 ## Liste des documents fournis dans le dossier docs de ce projet :
 
-1. [La mission de ce projet]().
+1. [La mission de ce projet](https://github.com/waleedos/2023_P11_Ameliorer-app-Web_Python-par-des-tests-et-du-d-bogage_GUDLFT/blob/QA/docs/Mission/1-Mission_de_ce_projet.pdf).
 
-2. [Les spécifications fonctionnelles & le guide de développement]().
+2. [Les spécifications fonctionnelles & le guide de développement](https://github.com/waleedos/2023_P11_Ameliorer-app-Web_Python-par-des-tests-et-du-d-bogage_GUDLFT/blob/QA/docs/Mission/2-Sp%C3%A9cifications-fonctionnelles.pdf).
 
 3. [Liste des Bogues de la version 1 de ce projet](https://github.com/OpenClassrooms-Student-Center/Python_Testing/issues).
 
-4. [La structure finale et actuelle de ce projet finie]().
+4. [La structure finale et actuelle de ce projet fini](https://github.com/waleedos/2023_P11_Ameliorer-app-Web_Python-par-des-tests-et-du-d-bogage_GUDLFT/blob/QA/docs/Mission/3-Structure_actuelle_de_ce_projet_fini.pdf).
 
 
 ## Comment cloner ce référentiel GitHub: 
