@@ -1,7 +1,7 @@
 <h1 align="center">OpenClassrooms Project N°11</h1>
 <h2 align="center">P11_Améliorez une application Web Python par des tests et du débogage</h1>
 
-![Logo LITReview](https://github.com/waleedos/2023_P11_Ameliorer-app-Web_Python-par-des-tests-et-du-d-bogage_GUDLFT/blob/QA/docs/Logos-Entete/logo-entete.png)
+![Logo LITReview](https://github.com/waleedos/2023_P11_Ameliorer-app-Web_Python-par-des-tests-et-du-d-bogage_GUDLFT/blob/QA/docs/photos/logo-entete.png)
 
 
 ## Technologies
@@ -107,7 +107,7 @@ git fetch origin
 git branch -a
 ```
 
-### Les Branches existantes dans ce projet:
+## Les Branches existantes dans ce projet:
 
 1.  1-Amelioration/ajout_de_CSS_pour_les_3_pages_html_de_depart
 2.  2-Bug/Entering_unknown_email_crashes_the_app
@@ -133,29 +133,40 @@ git checkout nom_de_la_branche_sur_laquelle_vous_voulez_aller
 python -m venv venv
 ```
 
-### Activer l'environnement virtuel Python:
+## Activer l'environnement virtuel Python:
 
-#### Sur Windows : 
+### Sur Windows : 
 ```
 .\env\Scripts\activate
 ```
 
-#### Sur Linux :
+### Sur Linux :
 ```
 source venv/bin/activate
 ```
 
-### Importer les modules:
+## Importer les modules:
 ```
 pip install -r requirements.txt
 ```
 
-### Lancer le serveur Flask:
+## Démarrage du serveur Flask :
+Une fois tout ce qui précède est fait, démarrez flask avec la commande suivante :
 ```
 flask run
 ```
 
-### Les tests : 
+### Il est temps maintenant de démarrer l'application sur votre navigateur :
+Ouvrez votre navigateur et naviguez vers une des deux adresse suivantes :
+```
+http://127.0.0.1:5000
+
+oubien
+
+http://localhost:5000```
+```
+
+## Les tests : 
 Dans ce projet, plus de 58 tests en tout et pour tout ont été élaborés comme suit : 
 
 | Nature des tests            | Nombre                       | Commande globale                                         |
@@ -164,7 +175,6 @@ Dans ce projet, plus de 58 tests en tout et pour tout ont été élaborés comme
 | 2. Les tests d'intégration  | 10 tests                     | ```pytest tests/integrity/```                            |
 | 3. Les tests fonctionnels   | 12 tests                     | ```pytest tests/fonctionnels/```                         |
 | 4. Les tests de performance | 1 test global                |1 test global donnant 2 rapports complets grâce à LOCUST  |
-
 
 
 1. Les tests unitaires : 36 tests, vous pouvez les executez en une seule fois par la commande suivante :
@@ -198,6 +208,40 @@ vous devriez l'executer avec la commande suivante :
 pytest tests/unit/test_home_page_load.py
 ```
 
+## Le Test de performance LOCUST :
+
+### Installation de locust : 
+Installez locust en copiant/collant la commande suivante :
+```
+pip install locust
+```
+
+### Execution du test LOCUST : 
+Rendez vous dans le dossier qui habite le fichier locustfile.py avec la commande suivante : 
+```
+cd tests/performance
+```
+
+### Démarrez le test LOCUST: 
+ATTENTION,  il est impératif que votre application soit fonctionnelle et le serveur flask soit démarré
+avant d'executer le test LOCUST.
+
+Executez le test locust avec la commande suivante :
+```
+locust
+```
+Puis ouvrez une autre fenetre de votre navigateur, et mettez vous sur l'adresse suivante : 
+```
+http://127.0.0.1:8089
+```
+
+### Lancez LOCUST :
+Une fois que vous vous rendez sur l'adresse mentionnée dans la commande précédente, vous serez sur une page comme la suivante:
+
+![LOCUST](https://github.com/waleedos/2023_P11_Ameliorer-app-Web_Python-par-des-tests-et-du-d-bogage_GUDLFT/blob/QA/docs/photos/locust.png)
+
+Remplissez ces 3 cases comme mentionné dans cette photo et validez en clickant sur 'Start swarming'
+
 
 
     And the tests can be started from the main folder with either of the following commands (adding coverage/reports):
@@ -214,7 +258,7 @@ pytest tests/unit/test_home_page_load.py
 flake8 --format=html --htmldir=flake-report
 
 voici ce que donne le rapport flake8 pour ce projet :
-![Rapport Flake8](https://github.com/waleedos/2023_P11_Ameliorer-app-Web_Python-par-des-tests-et-du-d-bogage_GUDLFT/blob/QA/docs/Logos-Entete/rapport-flake8.png)
+![Rapport Flake8](https://github.com/waleedos/2023_P11_Ameliorer-app-Web_Python-par-des-tests-et-du-d-bogage_GUDLFT/blob/QA/docs/photos/rapport-flake8.png)
 
     locust can also be launched from the test folder.
     The coverage of the code with pytest is 100%.
