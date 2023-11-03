@@ -5,11 +5,13 @@
 
 
 ## Technologies
-* Python (Version 3.11.5)
-* Flask (Version 3.0.0)
-* Werkzeug (Version 3.0.0)
-* Pytest (Version 7.4.3)
-* Locust (Version 2.18.1)
+* Python        (Version 3.11.5)
+* Flask         (Version 3.0.0)
+* Werkzeug      (Version 3.0.0)
+* Pytest        (Version 7.4.3)
+* Locust        (Version 2.18.1)
+* pytest-cov    (Version 4.1.0)
+
 
 
 ## Contribuer au projet
@@ -51,7 +53,39 @@ Une fois que vous aurez terminé, nous ferons un examen de ce que vous avez dans
 4. [La structure finale et actuelle de ce projet fini](https://github.com/waleedos/2023_P11_Ameliorer-app-Web_Python-par-des-tests-et-du-d-bogage_GUDLFT/blob/QA/docs/Mission/3-Structure_actuelle_de_ce_projet_fini.pdf).
 
 
-## Comment cloner ce référentiel GitHub: 
+
+## base donnée : 
+
+L'application est alimentée par des fichiers JSON. Il s’agit de contourner la présence d'une base de données jusqu’à ce que nous en ayons réellement besoin. Les principaux fichiers .json sont :
+1. Competitions.json - liste des compétitions : Voici la liste de toutes les compétitions existantes dans ce projet :
+
+| Numéro | Nom de la compétition       | Date et Heure           | Nombre de places |
+|--------|-----------------------------|-------------------------|------------------|
+| 1      | Spring Festival             | 2020-03-27 10:00:00     | 25               |
+| 2      | Fall Classic                | 2021-10-22 13:30:00     | 13               |
+| 3      | Europe Class                | 2022-12-14 10:00:00     | 19               |
+| 4      | Aust Lifting                | 2023-11-14 17:00:00     | 19               |
+| 5      | LA Strong Man               | 2023-12-23 11:00:00     | 35               |
+| 6      | Texas She Lifts             | 2024-03-02 13:30:00     | 35               |
+| 7      | Fully Booked Competition    | 2024-03-02 13:30:00     | 0                |
+
+
+
+2. Clubs.json - liste des clubs avec des informations pertinentes. Voici la liste des adresses e-mail que l'application   
+   acceptera pour votre connexion : voici la liste des clubs existants dans ce projet : 
+
+            | Numéro | Nom             | E-mail                | Points |
+            |--------|-----------------|-----------------------|--------|
+            | 1      | Simply Lift     | john@simplylift.co    | 13     |
+            | 2      | Iron Temple     | admin@irontemple.com  | 4      |
+            | 3      | She Lifts       | kate@shelifts.co.uk   | 12     |
+            | 4      | Bodylift France | marina@bodylift.fr    | 16     |
+            | 5      | Belge Lifts     | sec@belge-lift.be     | 13     |
+            | 6      | Aust Build      | dany@austbuild.com    | 5      |
+
+
+
+### Comment cloner ce référentiel GitHub: 
 
 Vous devrez cloner et forker le repo en totalité avec toutes les branches existantes:
 ``` 
@@ -63,7 +97,38 @@ git clone https://github.com/waleedos/2023_P11_Ameliorer-app-Web_Python-par-des-
 cd 2023_P11_Ameliorer-app-Web_Python-par-des-tests-et-du-d-bogage_GUDLFT
 ```
 
-### Créer un environnement virtuel Python:
+### Pour Récupérer toutes les branches:
+```
+git fetch origin
+```
+
+### Pour vérifier les branches disponibles
+```
+git branch -a
+```
+
+### Les Branches existantes dans ce projet:
+
+1.  1-Amelioration/ajout_de_CSS_pour_les_3_pages_html_de_depart
+2.  2-Bug/Entering_unknown_email_crashes_the_app
+3.  3-Bug/should_not_be_able_to_use_more_than_points_collected
+4.  4-Bug/max_12_places_for_booking_per_competition
+5.  5-bug/booking-places-past-competitions
+6.  6-Amelioration/ajout_club_table
+7.  QA
+8.  Tests/Ajout_de_tous_les_tests_fonctionnels
+9.  Tests/Ajout_de_tous_les_tests_integration
+10. Tests/Ajout_de_tous_les_tests_performance
+11. Tests/Ajout_de_tous_les_tests_unitaires
+12. main
+
+
+### Pour se déplacer entre les branches:
+```
+git checkout nom_de_la_branche_sur_laquelle_vous_voulez_aller
+```
+
+### Créer un environnement virtuel Python (sur une machine linux):
 ```
 python -m venv venv
 ```
@@ -82,29 +147,6 @@ pip install -r requirements.txt
 ```
 flask run
 ```
-
-### les Branches existantes dans ce projet:
-
-1.  1-Amelioration/ajout_de_CSS_pour_les_3_pages_html_de_depart
-2.  2-Bug/Entering_unknown_email_crashes_the_app
-3.  3-Bug/should_not_be_able_to_use_more_than_points_collected
-4.  4-Bug/max_12_places_for_booking_per_competition
-5.  5-bug/booking-places-past-competitions
-6.  6-Amelioration/ajout_club_table
-7.  QA
-8.  Tests/Ajout_de_tous_les_tests_fonctionnels
-9.  Tests/Ajout_de_tous_les_tests_integration
-10. Tests/Ajout_de_tous_les_tests_performance
-11. Tests/Ajout_de_tous_les_tests_unitaires
-12. main
-
-
-
-
-
-
-
-
 
 ### Testing
     
