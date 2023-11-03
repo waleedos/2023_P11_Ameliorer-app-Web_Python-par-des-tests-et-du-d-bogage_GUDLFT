@@ -74,14 +74,14 @@ L'application est alimentée par des fichiers JSON. Il s’agit de contourner la
 2. Clubs.json - liste des clubs avec des informations pertinentes. Voici la liste des adresses e-mail que l'application   
    acceptera pour votre connexion : voici la liste des clubs existants dans ce projet : 
 
-            | Numéro | Nom             | E-mail                | Points |
-            |--------|-----------------|-----------------------|--------|
-            | 1      | Simply Lift     | john@simplylift.co    | 13     |
-            | 2      | Iron Temple     | admin@irontemple.com  | 4      |
-            | 3      | She Lifts       | kate@shelifts.co.uk   | 12     |
-            | 4      | Bodylift France | marina@bodylift.fr    | 16     |
-            | 5      | Belge Lifts     | sec@belge-lift.be     | 13     |
-            | 6      | Aust Build      | dany@austbuild.com    | 5      |
+| Numéro | Nom             | E-mail                | Points |
+|--------|-----------------|-----------------------|--------|
+| 1      | Simply Lift     | john@simplylift.co    | 13     |
+| 2      | Iron Temple     | admin@irontemple.com  | 4      |
+| 3      | She Lifts       | kate@shelifts.co.uk   | 12     |
+| 4      | Bodylift France | marina@bodylift.fr    | 16     |
+| 5      | Belge Lifts     | sec@belge-lift.be     | 13     |
+| 6      | Aust Build      | dany@austbuild.com    | 5      |
 
 
 
