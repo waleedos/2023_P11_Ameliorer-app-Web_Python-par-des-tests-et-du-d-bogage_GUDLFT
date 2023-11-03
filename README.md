@@ -185,6 +185,19 @@ pytest tests/fonctionnels/
 4. Les tests de performance : 1 test global donnant deux rapports complets grace à LOCUST.
 
 
+### Execution d'un seul test à la fois : 
+
+Si vous voulez executer un seul test à la fois, vous pouvez utiliser la commande suivante : 
+```
+pytest tests/dossier/nom_du_test
+```
+
+Par exemple, si vous voulez executer le test unitaire nommé 'test_home_page_load.py' existant dans le dossier de tests 'unit'
+vous devriez l'executer avec la commande suivante : 
+```
+pytest tests/unit/test_home_page_load.py
+```
+
 
 
     And the tests can be started from the main folder with either of the following commands (adding coverage/reports):
@@ -198,8 +211,10 @@ pytest tests/fonctionnels/
 
 ### Vérification du code
 #### Contrôle du code avec flake8 :
-flake8 --max-line-length 130 --format=html --htmldir=flake-report
+flake8 --format=html --htmldir=flake-report
 
+voici ce que donne le rapport flake8 pour ce projet :
+![Rapport Flake8](https://github.com/waleedos/2023_P11_Ameliorer-app-Web_Python-par-des-tests-et-du-d-bogage_GUDLFT/blob/QA/docs/Logos-Entete/rapport-flake8.png)
 
     locust can also be launched from the test folder.
     The coverage of the code with pytest is 100%.
