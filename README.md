@@ -13,7 +13,7 @@
 
 
 ## Contribuer au projet
-GUDLFT Système de réservation de places pour les clubs sportif dans les compétitions est un projet open-source. N'hésitez pas à forker le code source et à contribuer avec vos propres fonctionnalités.
+GUDLFT Système de réservation de places pour les clubs sportifs dans les compétitions est un projet open-source. N'hésitez pas à forker le code source et à contribuer avec vos propres fonctionnalités.
 
 ## Auteurs
 L'équipe est composée de EL-WALID EL-KHABOU et de son mentor OpenClassRooms.
@@ -99,7 +99,14 @@ flask run
 12. main
 
 
-6. Testing
+
+
+
+
+
+
+
+### Testing
     
     The tests have been written for the pytest tools (unitary/integration/functional) and for locust (performances). These tools should be installed automatically from  requirements.txt. If not, the following commands can be launched:
 
@@ -121,3 +128,9 @@ flask run
 
     locust can also be launched from the test folder.
     The coverage of the code with pytest is 100%.
+
+pytest --cov=. --cov-report term-missing --cov-report html
+
+### Powered by EL-WALID EL-KHABOU
+
+E-mail : ewek.dev@gmail.com
