@@ -134,6 +134,13 @@ python -m venv venv
 ```
 
 ### Activer l'environnement virtuel Python:
+
+#### Sur Windows : 
+```
+.\env\Scripts\activate
+```
+
+#### Sur Linux :
 ```
 source venv/bin/activate
 ```
@@ -148,17 +155,36 @@ pip install -r requirements.txt
 flask run
 ```
 
-### Testing
-    
-    The tests have been written for the pytest tools (unitary/integration/functional) and for locust (performances). These tools should be installed automatically from  requirements.txt. If not, the following commands can be launched:
+### Les tests : 
+Dans ce projet, plus de 58 tests en tout et pour tout ont été élaborés comme suit : 
 
-    ```
-    $ pip install pytest
-    $ pip install pytest-flask
-    $ pip install coverage
-    $ pip install pytest-cov
-    $ pip install locust
-    ```
+| Nature des tests            | Nombre                       | Commande globale                                      |
+|-----------------------------|------------------------------|-------------------------------------------------------|
+| 1. Les tests unitaires      | 36 tests                     | `pytest tests/unit/`                                  |
+| 2. Les tests d'intégration  | 10 tests                     | `pytest tests/integrity/`                             |
+| 3. Les tests fonctionnels   | 12 tests                     | `pytest tests/fonctionnels/`                          |
+| 4. Les tests de performance | 1 test global                | donnant deux rapports complets grâce à LOCUST         |
+
+
+1. Les tests unitaires : 36 tests, vous pouvez les executez en une seule fois par la commande suivante :
+```
+pytest tests/unit/
+```
+
+2. Les tests d'intégration ou integrity-tests : 10 tests, vous pouvez les executez en une seule fois par la commande suivante :
+```
+pytest tests/integrity/
+```
+
+3. Les tests fonctionnels : 12 tests, vous pouvez les executez en une seule fois par la commande suivante :
+```
+pytest tests/fonctionnels/
+```
+
+4. Les tests de performance : 1 test global donnant deux rapports complets grace à LOCUST.
+
+
+
 
     And the tests can be started from the main folder with either of the following commands (adding coverage/reports):
 
@@ -167,6 +193,12 @@ flask run
     $ pytest --cov=.
     $ pytest --cov=. --cov-report html
     ```
+
+
+### Vérification du code
+#### Contrôle du code avec flake8 :
+flake8 --max-line-length 130 --format=html --htmldir=flake-report
+
 
     locust can also be launched from the test folder.
     The coverage of the code with pytest is 100%.
