@@ -129,8 +129,12 @@ flask run
     locust can also be launched from the test folder.
     The coverage of the code with pytest is 100%.
 
+### Rapports de couverture : 
+```
 pytest --cov=. --cov-report term-missing --cov-report html
+```
 
 ### Powered by EL-WALID EL-KHABOU
-
+```
 E-mail : ewek.dev@gmail.com
+```
