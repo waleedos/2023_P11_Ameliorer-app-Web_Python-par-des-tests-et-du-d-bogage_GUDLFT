@@ -158,12 +158,13 @@ flask run
 ### Les tests : 
 Dans ce projet, plus de 58 tests en tout et pour tout ont été élaborés comme suit : 
 
-| Nature des tests            | Nombre                       | Commande globale                                      |
-|-----------------------------|------------------------------|-------------------------------------------------------|
-| 1. Les tests unitaires      | 36 tests                     | `pytest tests/unit/`                                  |
-| 2. Les tests d'intégration  | 10 tests                     | `pytest tests/integrity/`                             |
-| 3. Les tests fonctionnels   | 12 tests                     | `pytest tests/fonctionnels/`                          |
-| 4. Les tests de performance | 1 test global                | donnant deux rapports complets grâce à LOCUST         |
+| Nature des tests            | Nombre                       | Commande globale                                         |
+|-----------------------------|------------------------------|----------------------------------------------------------|
+| 1. Les tests unitaires      | 36 tests                     | ```pytest tests/unit/```                                 |
+| 2. Les tests d'intégration  | 10 tests                     | ```pytest tests/integrity/```                            |
+| 3. Les tests fonctionnels   | 12 tests                     | ```pytest tests/fonctionnels/```                         |
+| 4. Les tests de performance | 1 test global                |1 test global donnant 2 rapports complets grâce à LOCUST  |
+
 
 
 1. Les tests unitaires : 36 tests, vous pouvez les executez en une seule fois par la commande suivante :
