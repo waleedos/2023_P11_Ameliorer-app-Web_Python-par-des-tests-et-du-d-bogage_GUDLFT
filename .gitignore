@@ -3,6 +3,7 @@ include
 lib
 .Python
 .envrc
+.env
 __pycache__
 __pycache__/
 venv
@@ -10,3 +11,5 @@ venv
 .idea/
 .pytest_cache
 .pytest_cache/
+.coverage
+.coveragerc
