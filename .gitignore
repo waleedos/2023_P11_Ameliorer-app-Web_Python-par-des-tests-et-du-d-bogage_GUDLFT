@@ -4,6 +4,7 @@ lib
 .Python
 .envrc
 .env
+.idea
 __pycache__
 __pycache__/
 venv
