@@ -161,7 +161,7 @@ Ouvrez votre navigateur et naviguez vers une des deux adresse suivantes :
 ```
 http://127.0.0.1:5000
 
-oubien
+ou bien
 
 http://localhost:5000```
 ```
