@@ -4,20 +4,23 @@ from flask import Flask, render_template, request, redirect, flash, url_for
 from datetime import datetime  # Ajouté pour la gestion du temps
 
 
-# Fonctions pour charger les données
+# Fonctions pour charger les données: Ouvre le fichier clubs.json, extrait la liste des clubs et la renvoie.
 def load_clubs():
     with open('clubs.json') as c:
         list_of_clubs = json.load(c)['clubs']
         return list_of_clubs
 
 
+# Fonctions pour charger les données: Ouvre le fichier competitions.json, extrait la liste des compétitions et la
+# renvoie.
 def load_competitions():
     with open('competitions.json') as comps:
         list_of_competitions = json.load(comps)['competitions']
         return list_of_competitions
 
 
-# Fonction pour vérifier la validité de la date
+# Fonction pour vérifier la validité de la date: Vérifie si la date de la compétition est ultérieure à la date et à
+# l'heure actuelles.
 def check_date_validity(competition: dict) -> bool:
     current_time = datetime.now()
     competition_time_str = competition["date"]
@@ -25,7 +28,13 @@ def check_date_validity(competition: dict) -> bool:
     return current_time < competition_time
 
 
-# Fonctions supplémentaires
+# Fonctions supplémentaires: Cette fonction prend deux arguments : club et competition, qui sont des chaînes de
+# caractères représentant respectivement le nom du club et le nom de la compétition que l'utilisateur souhaite
+# rechercher. La fonction parcourt les listes de clubs et de compétitions préalablement chargées à partir des
+# fichiers JSON pour trouver des correspondances en fonction des noms fournis. Si elle trouve à la fois un club
+# et une compétition correspondants, elle renvoie un drapeau de réussite (True) et les informations du club et
+# de la compétition sous forme de dictionnaires. Si aucune correspondance n'est trouvée pour le club ou la
+# compétition, elle renvoie un drapeau d'échec (False) et None pour le club et la compétition.
 def get_club_and_competition(club: str, competition: str) -> (bool, dict, dict):
     competition = [c for c in competitions if c['name'] == competition]
     club = [c for c in clubs if c['name'] == club]
@@ -34,6 +43,9 @@ def get_club_and_competition(club: str, competition: str) -> (bool, dict, dict):
     return True, club[0], competition[0]
 
 
+# Fonction pour mettre à jour les places: update_places(competition: dict, places_required: int, club: dict) -> bool:
+# Met à jour le nombre de places disponibles pour une compétition et le nombre de points du club en fonction du nombre
+# de places requis.
 def update_places(competition: dict, places_required: int, club: dict) -> bool:
     nbr_places = int(competition['numberOfPlaces'])
     club_nbr_points = int(club['points'])
@@ -49,7 +61,8 @@ def update_places(competition: dict, places_required: int, club: dict) -> bool:
         return False
 
 
-# Initialisation de l'application Flask
+# Initialisation de l'application Flask: Crée une instance de l'application Flask, définit une clé secrète et charge
+# les données des clubs et des compétitions à partir des fichiers JSON.
 app = Flask(__name__)
 app.secret_key = 'something_special'
 
@@ -57,7 +70,11 @@ competitions = load_competitions()
 clubs = load_clubs()
 
 
-# Vérification de l'email
+# Vérification de l'email: Cette fonction prend une chaîne de caractères email comme argument.
+# Elle parcourt la liste des clubs chargée précédemment à partir du fichier JSON pour rechercher un club qui a une
+# adresse email correspondante à celle fournie. Si elle trouve un club avec une adresse email correspondante,
+# elle renvoie les informations de ce club sous forme de dictionnaire. Si aucune correspondance n'est trouvée, elle
+# renvoie un dictionnaire vide.
 def check_email(email: str) -> dict:
     clubs_found = []
     for club in clubs:
@@ -69,7 +86,8 @@ def check_email(email: str) -> dict:
         return clubs_found[0]
 
 
-# Routes
+# ********************** Définition des routes de l'application ************************** #
+# Routes : Les commentaires expliquent chaque route de l'application
 @app.route('/')
 def index():
     return render_template('index.html')
@@ -85,6 +103,8 @@ def show_summary():
 
 
 @app.route("/book/<competition>/<club>", methods=['GET', 'POST'])
+# cette route prend deux paramètres dynamiques <competition> et <club>. Ces paramètres seront extraits de l'URL
+# lorsqu'un utilisateur accédera à cette route. avec les methodes http acceptées pour les requêtes GET et POST
 def book(competition, club):
     foundClub = [c for c in clubs if c["name"] == club][0]
     foundCompetition = [c for c in competitions if c["name"] == competition][0]
@@ -132,6 +152,9 @@ def logout():
     return redirect(url_for('index'))
 
 
-# Lancement de l'application
+# Lancement de l'application: Cette section vérifie si le fichier est exécuté en tant que point d'entrée principal en
+# utilisant # if __name__ == '__main__':. Si c'est le cas, l'application Flask est démarrée en mode débogage avec
+# app.run(debug=True). Cela signifie que si vous exécutez ce fichier directement, l'application sera lancée et nous
+# pourrons la tester localement en mode débogage.
 if __name__ == '__main__':
     app.run(debug=True)
