@@ -166,7 +166,7 @@ oubien
 http://localhost:5000```
 ```
 
-## Les tests : 
+# Les tests : 
 Dans ce projet, plus de 58 tests en tout et pour tout ont été élaborés comme suit : 
 
 | Nature des tests            | Nombre                       | Commande globale                                         |
@@ -177,44 +177,28 @@ Dans ce projet, plus de 58 tests en tout et pour tout ont été élaborés comme
 | 4. Les tests de performance | 1 test global                |1 test global donnant 2 rapports complets grâce à LOCUST  |
 
 
-1. Les tests unitaires : 36 tests, vous pouvez les executez en une seule fois par la commande suivante :
+## Les tests unitaires : 36 tests, vous pouvez les executez en une seule fois par la commande suivante :
 ```
 pytest tests/unit/
 ```
 ![Execution de tous les tests unitaires à la fois](https://github.com/waleedos/2023_P11_Ameliorer-app-Web_Python-par-des-tests-et-du-d-bogage_GUDLFT/blob/QA/docs/photos/unit.png)
 
 
-2. Les tests d'intégration ou integrity-tests : 10 tests, vous pouvez les executez en une seule fois par la commande suivante :
+## Les tests d'intégration ou integrity-tests : 10 tests, vous pouvez les executez en une seule fois par la commande suivante :
 ```
 pytest tests/integrity/
 ```
 ![Execution de tous les tests fonctionnels à la fois](https://github.com/waleedos/2023_P11_Ameliorer-app-Web_Python-par-des-tests-et-du-d-bogage_GUDLFT/blob/QA/docs/photos/integrity.png)
 
-3. Les tests fonctionnels : 12 tests, vous pouvez les executez en une seule fois par la commande suivante :
+
+## Les tests fonctionnels : 12 tests, vous pouvez les executez en une seule fois par la commande suivante :
 ```
 pytest tests/fonctionnels/
 ```
 ![Execution de tous les tests fonctionnels à la fois](https://github.com/waleedos/2023_P11_Ameliorer-app-Web_Python-par-des-tests-et-du-d-bogage_GUDLFT/blob/QA/docs/photos/fonctionnels.png)
 
 
-4. Les tests de performance : 1 test global donnant deux rapports complets grace à LOCUST.
-
-
-### Execution d'un seul test à la fois : 
-
-Si vous voulez executer un seul test à la fois, vous pouvez utiliser la commande suivante : 
-```
-pytest tests/dossier/nom_du_test
-```
-
-Par exemple, si vous voulez executer le test unitaire nommé 'test_home_page_load.py' existant dans le dossier de tests 'unit'
-vous devriez l'executer avec la commande suivante : 
-```
-pytest tests/unit/test_home_page_load.py
-```
-
-
-## Le Test de performance LOCUST :
+## Les tests de performance : 1 test global donnant deux rapports complets grace à LOCUST.
 
 ### Installation de locust : 
 Installez locust en copiant/collant la commande suivante :
@@ -249,32 +233,47 @@ Une fois que vous vous rendez sur l'adresse mentionnée dans la commande précé
 Remplissez ces 3 cases comme mentionné dans cette photo et validez en clickant sur 'Start swarming'
 
 
+### Execution d'un seul test à la fois : 
 
-    And the tests can be started from the main folder with either of the following commands (adding coverage/reports):
+Si vous voulez executer un seul test à la fois, vous pouvez utiliser la commande suivante : 
+```
+pytest tests/dossier/nom_du_test
+```
 
-    ```
-    $ pytest
-    $ pytest --cov=.
-    $ pytest --cov=. --cov-report html
-    ```
+Par exemple, si vous voulez executer le test unitaire nommé 'test_home_page_load.py' existant dans le dossier de tests 'unit'
+vous devriez l'executer avec la commande suivante : 
+```
+pytest tests/unit/test_home_page_load.py
+```
 
-
-### Vérification du code
-#### Contrôle du code avec flake8 :
-flake8 --format=html --htmldir=flake-report
-
-voici ce que donne le rapport flake8 pour ce projet :
-![Rapport Flake8](https://github.com/waleedos/2023_P11_Ameliorer-app-Web_Python-par-des-tests-et-du-d-bogage_GUDLFT/blob/QA/docs/photos/rapport-flake8.png)
-
-    locust can also be launched from the test folder.
-    The coverage of the code with pytest is 100%.
-
-### Rapports de couverture : 
+## Test & Rapports de couverture : 
 ```
 pytest --cov=. --cov-report term-missing --cov-report html
 ```
 
-### Powered by EL-WALID EL-KHABOU
+
+### Vérification & Contrôle du code avec flake8 :
+```
+flake8 --format=html --htmldir=flake-report
+```
+
+
+# les rapports de cette mission & projet : 
+
+1. [Rapports d'execution de tous les tests](https://github.com/waleedos/2023_P11_Ameliorer-app-Web_Python-par-des-tests-et-du-d-bogage_GUDLFT/blob/QA/docs/rapport/tous-les-tests.pdf).
+
+2. [Rapports d'execution de locust pour 6 utilisateurs et spawn-rate = 1](https://github.com/waleedos/2023_P11_Ameliorer-app-Web_Python-par-des-tests-et-du-d-bogage_GUDLFT/blob/QA/docs/rapport/locust-6-1.pdf).
+
+3. [Rapports d'execution de locust pour 6 utilisateurs et spawn-rate = 6](https://github.com/waleedos/2023_P11_Ameliorer-app-Web_Python-par-des-tests-et-du-d-bogage_GUDLFT/blob/QA/docs/rapport/locust-6-6.pdf).
+
+4. [Rapports de couverture globale](https://github.com/waleedos/2023_P11_Ameliorer-app-Web_Python-par-des-tests-et-du-d-bogage_GUDLFT/blob/QA/docs/rapport/rapport_de_couverture.pdf).
+
+5. [Rapports de couverture pour server.py](https://github.com/waleedos/2023_P11_Ameliorer-app-Web_Python-par-des-tests-et-du-d-bogage_GUDLFT/blob/QA/docs/rapport/rapport_coverage_for_server_py.pdf).
+
+6. [Rapport Flake8](https://github.com/waleedos/2023_P11_Ameliorer-app-Web_Python-par-des-tests-et-du-d-bogage_GUDLFT/blob/QA/docs/rapport/flake8-violations.pdf)
+
+
+## Powered by EL-WALID EL-KHABOU
 ```
 E-mail : ewek.dev@gmail.com
 ```
