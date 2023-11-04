@@ -1,55 +1,96 @@
 <!DOCTYPE html>
+<!-- Indique que le document est de type HTML5. -->
 <html lang="en">
+<!-- L'élément racine de la page qui spécifie que le contenu est en anglais. -->
 <head>
+    <!-- Contient des métadonnées et des liens vers des ressources externes. -->
     <meta charset="UTF-8">
+    <!-- Spécifie l'encodage des caractères pour le contenu de la page en UTF-8. -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Assure une mise à l'échelle appropriée sur les appareils mobiles. -->
     <title>Summary | GUDLFT Registration</title>
+    <!-- Le titre de la page, affiché dans l'onglet du navigateur. -->
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <!-- Lien vers la feuille de style externe pour styliser la page. -->
 </head>
 <body>
+    <!-- La section qui contient tout le contenu affiché de la page web. -->
     <div class="logo-container">
+        <!-- Un conteneur pour le logo et le nom de l'entreprise. -->
         <img src="/static/logo.png" alt="Logo du site" class="site-logo">
+        <!-- Une image qui est le logo du site, avec un texte alternatif en cas de non-chargement de l'image. -->
         <p class="company-name">GÜDLFT</p>
+        <!-- Le nom de l'entreprise en texte. -->
     </div>
     <h1 class="center-text">Welcome, {{ club['email'] }}</h1>
+    <!-- Un message de bienvenue qui affiche l'e-mail du club connecté, centré dans la page. -->
     <div class="center-text">
-        <a href="{{ url_for('logout') }}">Logout</a>
+        <!-- Un conteneur centré pour le lien de déconnexion. -->
+        <a href="{{ url_for('logout') }}" class="logout-button">Logout</a>
+
+        <!-- Un lien permettant à l'utilisateur de se déconnecter de la session. -->
     </div>
 
     <div class="center-text">
+        <!-- Un autre conteneur centré pour afficher les points disponibles du club. -->
         <p>Points available: {{ club['points'] }}</p>
+        <!-- Affiche le nombre de points disponibles pour le club de l'utilisateur. -->
     </div>
 
+    <!-- Bloc pour afficher les messages flash. -->
     {% with messages = get_flashed_messages() %}
+    <!-- Commence à travailler avec les messages flash récupérés. -->
     {% if messages %}
+    <!-- Vérifie s'il y a des messages flash à afficher. -->
     <ul class="flash-messages center-text">
+        <!-- Une liste non ordonnée pour les messages flash, centrée. -->
         {% for message in messages %}
+        <!-- Boucle sur chaque message flash récupéré. -->
         <li>{{ message }}</li>
+        <!-- Affiche chaque message flash dans un élément de liste. -->
         {% endfor %}
     </ul>
     {% endif %}
+    <!-- Termine la condition des messages flash. -->
     {% endwith %}
+    <!-- Termine le bloc avec les messages flash. -->
 
     <h2 class="center-text">Competitions:</h2>
-
+    <!-- Un titre pour la section des compétitions, centré. -->
     <table class="center-block">
+        <!-- Un tableau centré pour afficher les compétitions. -->
         <thead>
+            <!-- La tête du tableau, contenant les en-têtes de colonnes. -->
             <tr>
+                <!-- Une ligne d'en-têtes de colonnes. -->
                 <th>Competition Name</th>
+                <!-- En-tête de colonne pour les noms des compétitions. -->
                 <th>Date</th>
+                <!-- En-tête de colonne pour les dates des compétitions. -->
                 <th>Number of Places</th>
+                <!-- En-tête de colonne pour le nombre de places disponibles. -->
                 <th>Action</th>
+                <!-- En-tête de colonne pour les actions possibles, comme réserver des places. -->
             </tr>
         </thead>
         <tbody>
+            <!-- Le corps du tableau, contenant les données des lignes. -->
             {% for comp in competitions %}
+            <!-- Boucle sur chaque compétition disponible. -->
             <tr>
+                <!-- Une ligne de tableau pour chaque compétition. -->
                 <td>{{ comp['name'] }}</td>
+                <!-- Affiche le nom de la compétition. -->
                 <td>{{ comp['date'] }}</td>
+                <!-- Affiche la date de la compétition. -->
                 <td>{{ comp['numberOfPlaces'] }}</td>
+                <!-- Affiche le nombre de places disponibles pour la compétition. -->
                 <td>
+                    <!-- Cellule pour l'action de réservation de places. -->
                     {% if comp['numberOfPlaces']|int > 0 %}
+                    <!-- Vérifie si le nombre de places est supérieur à 0 avant d'afficher l'option de réservation. -->
                     <a href="{{ url_for('book', competition=comp['name'], club=club['name']) }}">Book Places</a>
+                    <!-- Un lien pour réserver des places si des places sont disponibles. -->
                     {% endif %}
                 </td>
             </tr>

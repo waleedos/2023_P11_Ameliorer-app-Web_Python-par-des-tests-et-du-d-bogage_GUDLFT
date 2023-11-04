@@ -12,6 +12,18 @@ p, form {
 	text-align: center;
 }
 
+.email-prompt {
+    font-size: larger;
+    font-weight: bold;
+    color: green;
+}
+
+.email-error {
+    font-size: larger;
+    font-weight: bold;
+    color: red;
+}
+
 
 #flash-message-container {
     text-align: center;

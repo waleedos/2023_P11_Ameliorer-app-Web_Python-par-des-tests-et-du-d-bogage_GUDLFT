@@ -1,39 +1,64 @@
 <!DOCTYPE html>
+<!-- Déclaration du type de document, ici HTML5 -->
 <html lang="en">
+<!-- L'élément racine de la page HTML indiquant la langue de la page (en anglais). -->
 <head>
+    <!-- La section head contient des métadonnées/informations sur la page. -->
     <meta charset="UTF-8">
+    <!-- Définit l'encodage des caractères pour la page, UTF-8 couvre la plupart des caractères de toutes les langues écrites. -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Assure que la mise en page est optimisée pour les appareils mobiles. -->
     <title>Booking for {{competition['name']}} || GUDLFT</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">    
+    <!-- Le titre de la page, qui sera également le nom de l'onglet dans le navigateur. Il affiche le nom de la compétition, dynamiquement inséré. -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <!-- Lie la feuille de style CSS pour styliser la page. Le chemin est généré dynamiquement pour pointer vers le dossier statique. -->    
 </head>
 <body>
+    <!-- Le corps de la page, contenant tout le contenu visible de la page. -->
     <div class="logo-container">
+        <!-- Un conteneur pour le logo et le nom de l'entreprise. -->
         <img src="/static/logo.png" alt="Logo du site" class="site-logo">
+        <!-- L'image du logo de l'entreprise avec un texte alternatif si l'image ne peut être chargée. -->
         <p class="company-name">GÜDLFT</p>
+        <!-- Le nom de l'entreprise est affiché avec une grande police. -->
     </div>    
     <h2>{{competition['name']}}</h2>
+    <!-- Affiche le nom de la compétition dans un titre de niveau 2. -->
     <!-- Ligne pour "Places available: 25" -->
     <div class="center-text" id="places-available">
+        <!-- Un conteneur centré affichant le nombre de places disponibles pour la compétition. -->
         Places available: {{competition['numberOfPlaces']}}
     </div>
 
     <!-- Ligne pour le formulaire -->
     <div class="center-text" id="booking-form">
+        <!-- Un conteneur pour le formulaire de réservation, centré sur la page. -->
         <form action="/purchasePlaces" method="post">
+            <!-- Le formulaire pour acheter des places, qui sera traité par le chemin /purchasePlaces sur le serveur. -->
             <input type="hidden" name="club" value="{{club['name']}}">
+            <!-- Un champ caché contenant le nom du club, envoyé avec le formulaire. -->
             <input type="hidden" name="competition" value="{{competition['name']}}">
+            <!-- Un champ caché contenant le nom de la compétition, envoyé avec le formulaire. -->
             <label for="places">How many places?</label>
+            <!-- Une étiquette pour le champ de saisie du nombre de places. -->
             <input type="number" name="places" id=""/>
+            <!-- Un champ de saisie pour le nombre de places souhaitées. Accepte uniquement des nombres. -->
             <button type="submit">Book</button>
+            <!-- Un bouton pour soumettre le formulaire, démarrant le processus de réservation. -->
         </form>
     </div>
 
     <!-- Section pour les messages flash -->
     <div id="flash-message-container">
+        <!-- Un conteneur pour les messages flash, qui sont des messages temporaires comme les confirmations ou les erreurs. -->
         {% with messages = get_flashed_messages() %}
+            <!-- Démarre un bloc où les messages flash sont récupérés. -->
             {% if messages %}
+                <!-- Vérifie si il y a des messages flash à afficher. -->
                 {% for message in messages %}
+                    <!-- Boucle sur chaque message flash. -->
                     <div class="flash-message">{{ message }}</div>
+                    <!-- Affiche le message flash dans un div. -->
                 {% endfor %}
             {% endif %}
         {% endwith %}

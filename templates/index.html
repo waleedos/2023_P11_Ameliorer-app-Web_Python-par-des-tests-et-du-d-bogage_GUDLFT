@@ -1,32 +1,54 @@
 <!DOCTYPE html>
+<!-- La première ligne indique que ce document est un document HTML5. -->
 <html lang="en">
+<!-- L'élément racine <html> qui définit la langue de la page comme anglais. -->
 <head>
+    <!-- La balise <head> contient des éléments meta et des liens vers des feuilles de style ou des fichiers de script. -->
     <meta charset="UTF-8">
+    <!-- La balise <meta> définit l'encodage des caractères pour le document en UTF-8, qui supporte la plupart des caractères et symboles. -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- La balise <meta> avec l'attribut viewport rend la page web réactive sur les appareils mobiles. -->
     <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">    
+    <!-- La balise <link> est utilisée pour lier une feuille de style externe, ici 'index.css', qui est utilisée pour styliser la page. -->
     <title>GUDLFT Registration</title>
+    <!-- La balise <title> définit le titre de la page, qui apparaît dans l'onglet du navigateur. -->
     <link rel="icon" href="/static/favicon.ico" type="image/x-icon">    
+    <!-- La balise <link> est également utilisée pour définir l'icône de la page (favicon), qui apparaît dans l'onglet du navigateur. -->
 </head>
 <body>
+    <!-- La balise <body> contient le contenu de la page web que les utilisateurs voient et avec lequel ils interagissent. -->
     <div class="logo-container">
+        <!-- Un conteneur pour le logo et le nom de l'entreprise. -->
         <img src="/static/logo.png" alt="Logo du site" class="site-logo">
+        <!-- L'image du logo avec un texte alternatif qui apparaîtra si l'image ne se charge pas. -->
         <p class="company-name">GÜDLFT</p>
+        <!-- Le nom de l'entreprise affiché sous le logo. -->
     </div>
     <h1>Welcome to the GUDLFT Registration Portal!</h1>
-    <p>Please enter your secretary email to continue:</p>
+    <!-- Un titre de premier niveau qui accueille les utilisateurs sur le portail d'inscription. -->
+    <p class="email-prompt">Please enter your secretary email to continue:</p>
+    <!-- Un paragraphe expliquant aux utilisateurs de saisir leur e-mail pour continuer. -->
 
     <!-- Ajout du message d'erreur pour l'email -->
     {% if email_error %}
-        <p>Sorry, that email wasn't found.</p></br></br>
+        <!-- Une condition Jinja2 pour vérifier si la variable 'email_error' est vraie, ce qui signifie qu'il y a une erreur à afficher. -->
+        <p class="email-error">Sorry, that email wasn't found.</p></br></br>
+        <!-- Si 'email_error' est vrai, ce paragraphe s'affichera pour indiquer à l'utilisateur que l'e-mail n'a pas été trouvé. -->
     {% endif %}
 
     <form action="showSummary" method="post">
+        <!-- Le formulaire qui envoie les données à l'adresse 'showSummary' en utilisant la méthode POST. -->
         <label for="email">Email:</label>
+        <!-- Une étiquette pour le champ de saisie de l'e-mail. -->
         <input type="email" name="email" id=""/>
+        <!-- Un champ de saisie pour l'e-mail qui utilise le type 'email' pour la validation. -->
         <button type="submit">Enter</button>
+        <!-- Un bouton pour soumettre le formulaire. -->
     </form>
     <div class="club_table">
+        <!-- Un conteneur pour le lien vers le tableau des clubs. -->
         <a href="{{ url_for('club_table') }}">See club list and points</a>
+        <!-- Un lien qui dirige l'utilisateur vers la page du tableau des clubs. -->
     </div>
 </body>
 </html>
