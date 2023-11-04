@@ -181,16 +181,21 @@ Dans ce projet, plus de 58 tests en tout et pour tout ont été élaborés comme
 ```
 pytest tests/unit/
 ```
+![Execution de tous les tests unitaires à la fois](https://github.com/waleedos/2023_P11_Ameliorer-app-Web_Python-par-des-tests-et-du-d-bogage_GUDLFT/blob/QA/docs/photos/unit.png)
+
 
 2. Les tests d'intégration ou integrity-tests : 10 tests, vous pouvez les executez en une seule fois par la commande suivante :
 ```
 pytest tests/integrity/
 ```
+![Execution de tous les tests fonctionnels à la fois](https://github.com/waleedos/2023_P11_Ameliorer-app-Web_Python-par-des-tests-et-du-d-bogage_GUDLFT/blob/QA/docs/photos/integrity.png)
 
 3. Les tests fonctionnels : 12 tests, vous pouvez les executez en une seule fois par la commande suivante :
 ```
 pytest tests/fonctionnels/
 ```
+![Execution de tous les tests fonctionnels à la fois](https://github.com/waleedos/2023_P11_Ameliorer-app-Web_Python-par-des-tests-et-du-d-bogage_GUDLFT/blob/QA/docs/photos/fonctionnels.png)
+
 
 4. Les tests de performance : 1 test global donnant deux rapports complets grace à LOCUST.
 
@@ -207,6 +212,7 @@ vous devriez l'executer avec la commande suivante :
 ```
 pytest tests/unit/test_home_page_load.py
 ```
+
 
 ## Le Test de performance LOCUST :
 
