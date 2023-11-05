@@ -4,17 +4,23 @@
 ![Logo LITReview](https://github.com/waleedos/2023_P11_Ameliorer-app-Web_Python-par-des-tests-et-du-d-bogage_GUDLFT/blob/QA/docs/photos/logo-entete.png)
 
 
-## Technologies
-* Python        (Version 3.11.5)
-* Flask         (Version 3.0.0)
-* Werkzeug      (Version 3.0.0)
-* Pytest        (Version 7.4.3)
-* Locust        (Version 2.18.1)
-* pytest-cov    (Version 4.1.0)
+## Compétences aquises et évaluées de ce projet : 
+* Implémentez une suite de tests Python.
+* Debugger le code d’une application Python.
+* Gérer les erreurs et les exceptions en Python
+
+
+## Technologies utilisées :
+* Python        (Version 3.11.5).
+* Flask         (Version 3.0.0).
+* Werkzeug      (Version 3.0.0).
+* Pytest        (Version 7.4.3).
+* Locust        (Version 2.18.1).
+* pytest-cov    (Version 4.1.0).
 
 
 
-## Contribuer au projet
+## Contribuer au projet :
 GUDLFT Système de réservation de places pour les clubs sportifs dans les compétitions est un projet open-source. N'hésitez pas à forker le code source et à contribuer avec vos propres fonctionnalités.
 
 ## Auteurs
