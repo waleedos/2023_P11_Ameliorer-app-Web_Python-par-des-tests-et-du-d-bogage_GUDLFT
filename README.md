@@ -90,8 +90,7 @@ L'application est alimentée par des fichiers JSON. Il s’agit de contourner la
 | 6      | Aust Build      | dany@austbuild.com    | 5      |
 
 
-
-### Comment cloner ce référentiel GitHub: 
+## Comment cloner ce référentiel GitHub: 
 
 Vous devrez cloner et forker le repo en totalité avec toutes les branches existantes:
 ``` 
@@ -103,14 +102,22 @@ git clone https://github.com/waleedos/2023_P11_Ameliorer-app-Web_Python-par-des-
 cd 2023_P11_Ameliorer-app-Web_Python-par-des-tests-et-du-d-bogage_GUDLFT
 ```
 
+### Téléchargez toutes les branches existantes:
+Copier/coller toutes les 3 lignes de code suivante en une seul fois dans votre ligne de commande :
+```
+for branch in `git branch -r | grep -v '\->'`; do
+    git branch --track "${branch#origin/}" "$branch"
+done
+```
+
 ### Pour Récupérer toutes les branches:
 ```
 git fetch origin
 ```
 
-### Pour vérifier les branches disponibles
+### Pour lister toutes les branches distantes après le clonage, vous pouvez utiliser :
 ```
-git branch -a
+git branch -r
 ```
 
 ## Les Branches existantes dans ce projet:
@@ -139,6 +146,11 @@ git checkout nom_de_la_branche_sur_laquelle_vous_voulez_aller
 python -m venv venv
 ```
 
+### Mettez vous sur la branche QA :
+```
+git checkout QA
+```
+
 ## Activer l'environnement virtuel Python:
 
 ### Sur Windows : 
@@ -149,6 +161,11 @@ python -m venv venv
 ### Sur Linux :
 ```
 source venv/bin/activate
+```
+
+### Assurez vous du chemin PYTHONPATH
+```
+export PYTHONPATH=$PYTHONPATH:/home/***_chemin_vers_votre_dossier_de_ce_projet
 ```
 
 ## Importer les modules:
